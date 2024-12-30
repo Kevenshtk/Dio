@@ -1,0 +1,62 @@
+*
+    box-sizing: border-box
+    font-family: 'Roboto', sans-serif
+
+ol, ul
+    list-style: none
+    padding: 0
+
+.container
+    padding: 1rem
+
+    .list-pokemons
+        display: grid
+        grid-template-columns: 1fr 1fr
+        padding: 0
+        margin: 0
+
+        &-item
+            display: flex
+            flex-direction: column
+            background-color: #49d0b0
+            color: #fff
+            border-radius: 1rem
+            margin: .5rem
+            padding: 1rem 1rem
+
+            .topo-card
+                display: flex
+                flex-direction: row-reverse
+                justify-content: space-between
+
+                .num-card
+                    color: #40b499
+
+                .nome-pokemon
+                    font-size: 18px
+                    margin: 0
+
+            .detalhes
+                display: flex
+                justify-content: space-between
+                align-items: center
+
+                .tipos 
+                    li
+                        text-align: center
+                        font-size: 14px
+                        font-weight: normal
+                        background-color: #f0f2f660
+                        border-radius: 1rem
+                        margin-bottom: .5rem
+                        padding: 8px 10px
+                
+
+            .img
+                width: 100px
+                height: 100px
+                text-align: center
+
+                img
+                    height: 100%
+                    margin: auto
