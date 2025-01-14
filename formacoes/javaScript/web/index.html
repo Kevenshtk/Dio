@@ -13,29 +13,76 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <section class="container">
-        <h1>Pokedex</h1>
+    <section class="secao-pokedex">
+        <h1 class="container-pokedex-title">Pokedex</h1>
 
-        <ol class="list-pokemons">
-            <li class="list-pokemons-item">
-                <div class="topo-card">
-                    <span class="num-card">#001</span>
-                    <h3 class="nome-pokemon">Bulbasaur</h3>
-                </div>
-                <div class="detalhes">
-                    <ul class="tipos">
-                        <li>Grass</li>
-                        <li>Poison</li>
-                    </ul>
-                    <div class="img">
-                        <img src="1.png" alt="">
-                    </div>
-                </div>
-            </li>
-        </ol>
+        <ol class="list-pokemons"></ol>
+
+        <div class="pagination">
+            <button id="loadMoreButton" type="button">
+                Load More
+            </button>
+        </div>
     </section>
 
+    <section class="secao-pokemon-info">
+        <div class="header">
+            <div class="container-btn">
+                <button id="btn-voltar">Voltar</button>
+                <button>Favoritar</button>
+            </div>
+            <div class="container-info-pokemon">
+                <div class="container-name-id">
+                    <h2>Bulbasaur</h2>
+                    <span>#001</span>
+                </div>
+                <ul class="container-type">
+                    <li>Grass</li>
+                    <li>Poison</li>
+                </ul>
+                <div class="container-img">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bulbasaur">
+                </div>
+            </div>
+        </div>
 
+        <div class="container-status-pokemon">
+            <h3>Base Stats</h3>
+
+            <ul class="status-pokemon">
+                <li>
+                    <span class="title">HP</span>
+                    <span class="info">45</span>
+                </li>
+                <li>
+                    <span class="title">Attack</span>
+                    <span class="info">60</span>
+                </li>
+                <li>
+                    <span class="title">Defense</span>
+                    <span class="info">48</span>
+                </li>
+                <li>
+                    <span class="title">Sp. Atk</span>
+                    <span class="info">65</span>
+                </li>
+                <li>
+                    <span class="title">Sp. Def</span>
+                    <span class="info">65</span>
+                </li>
+                <li>
+                    <span class="title">Speed</span>
+                    <span class="info">45</span>
+                </li>
+                <li>
+                    <span class="title">Total</span>
+                    <span class="info">317</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="assets/js/pokemon-model.js"></script>
     <script src="assets/js/poke-api.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

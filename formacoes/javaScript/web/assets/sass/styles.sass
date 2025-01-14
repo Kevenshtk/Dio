@@ -1,4 +1,9 @@
+@use 'variables' as *
+@use 'utilities' as *
+    
 *
+    margin: 0
+    padding: 0
     box-sizing: border-box
     font-family: 'Roboto', sans-serif
 
@@ -6,57 +11,203 @@ ol, ul
     list-style: none
     padding: 0
 
-.container
-    padding: 1rem
+body
+    margin: 0
+    padding: 0
+    display: flex
+    justify-content: center
+
+.secao-pokedex
+    max-width: 1024px
+    width: 100%
+    margin: 20px 0
+    border: 1px solid #ccc
+    border-radius: 10px
+    box-shadow: 0 0 10px #ccc
+    padding: 25px
+
+    &-title
+        color: #313131
 
     .list-pokemons
-        display: grid
-        grid-template-columns: 1fr 1fr
-        padding: 0
-        margin: 0
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        gap: 18px
+
+        @include mobile
+            justify-content: center
+
+        @extend %bgColorCards
 
         &-item
+            flex: 1 1 28%
             display: flex
             flex-direction: column
-            background-color: #49d0b0
             color: #fff
-            border-radius: 1rem
-            margin: .5rem
-            padding: 1rem 1rem
+            border-radius: 15px
+            box-shadow: 8px 8px 10px #ccc
+            padding: 18px
 
-            .topo-card
+            @include mobile
+                max-width: 165px
+
+            @media (max-width: 400px)
+                max-width: 137px
+
+            .top-card
                 display: flex
                 flex-direction: row-reverse
                 justify-content: space-between
 
                 .num-card
-                    color: #40b499
+                    color: #00000046
 
-                .nome-pokemon
-                    font-size: 18px
-                    margin: 0
+                .name-pokemon
+                    font-size: 25px
+                    text-transform: capitalize
 
-            .detalhes
+                    @include mobile
+                        font-size: 18px
+
+                    @media (max-width: 400px)
+                        font-size: 16px
+
+
+            .details
                 display: flex
                 justify-content: space-between
-                align-items: center
+                gap: 15px
 
-                .tipos 
+                .type 
+                    margin-top: 15px 
+
                     li
                         text-align: center
                         font-size: 14px
                         font-weight: normal
+                        text-transform: capitalize
                         background-color: #f0f2f660
-                        border-radius: 1rem
+                        border-radius: 18px
                         margin-bottom: .5rem
-                        padding: 8px 10px
+                        padding: 8px 18px
+
+                        @include mobile
+                            font-size: 10px
+                            padding: 4px 9px
                 
+                .container-img
+                    width: 130px
+                    width: 100px
 
-            .img
-                width: 100px
-                height: 100px
+                    @include mobile
+                        width: 75px
+                        height: 90px
+
+                    img
+                        width: 100%
+                        height: 100%
+
+    .pagination 
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 100%
+        padding: 1rem
+
+        button
+            padding: .25rem .5rem
+            margin: .25rem 0
+            font-size: .625rem
+            color: #fff
+            background-color: #6c79db
+            border: none
+            border-radius: 1rem
+
+
+
+.secao-pokemon-info
+    display: none
+    max-width: 550px
+    height: 98vh
+    width: 100%
+    margin: 10px 20px 5px 20px
+    border: 1px solid #ccc
+    border-radius: 5%
+    box-shadow: 0 0 10px #ccc
+    padding: 0 0 25px 0
+    background-color: $bg-color-type-grass
+
+    .header
+        border-radius: 10px
+        padding-top: 50px
+
+        .container-btn, .container-info-pokemon
+            display: flex
+            justify-content: space-between
+
+        .container-btn
+            margin: 0 25px 25px 25px
+
+        .container-info-pokemon
+            flex-direction: column
+            margin: 0 25px
+
+            .container-name-id
+                display: flex
+                justify-content: space-between
+                color: #fff
+
+                h2
+                    font-size: 50px
+                    letter-spacing: 2px
+                
+                span
+                    font-size: 20px
+                
+            .container-type
+                display: flex
+                gap: 20px
+
+                li
+                    text-align: center
+                    font-size: 14px
+                    font-weight: normal
+                    color: #fff
+                    text-transform: capitalize
+                    background-color: #f0f2f660
+                    border-radius: 18px
+                    padding: 8px 18px
+
+            .container-img
+                width: 100%
+                height: 300px
                 text-align: center
-
+                
                 img
-                    height: 100%
-                    margin: auto
+                    width: 400px
+
+    .container-status-pokemon
+        height: 48%
+        border-radius: 5%
+        background-color: #fff
+        padding: 100px 20px 2px 20px
+
+        h3
+            color: #313131
+            margin-bottom: 15px
+
+        .status-pokemon li
+            display: flex
+            gap: 20px
+            padding: 8px
+
+            .title
+                width: 10%
+                color: #313131b2
+            
+            .info
+                width: 5%
+                color: #313131
+                text-align: right

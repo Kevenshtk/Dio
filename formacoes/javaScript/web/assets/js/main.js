@@ -1,29 +1,44 @@
+const pokemonList = document.querySelector('.list-pokemons');
+const loadMoreButton = document.querySelector('#loadMoreButton');
+const btnVoltar = document.querySelector('#btn-voltar');
+const pokemonCardInfo = document.querySelector('secao-pokemon-info');
+const limit = 6;
+let offset = 0;
 
-function convertPokemonTypesToLi(pokemonTypes){
-    return pokemonTypes.map((typeSlot) => {
-        return `<li>${typeSlot.type.name}</li>`
+function loadPokemonItens(offset, limit){
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+        const newHtml = pokemons.map((pokemon) => 
+            `<li class="list-pokemons-item ${pokemon.type}">
+                    <div class="top-card">
+                        <span class="num-card">#${pokemon.number}</span>
+                        <h3 class="name-pokemon">${pokemon.name}</h3>
+                    </div>
+                    <div class="details">
+                        <ul class="type">
+                            ${pokemon.types.map((type) => `<li>${type}</li>`).join("")}
+                        </ul>
+                        <div class="container-img">
+                            <img src="${pokemon.photo}" alt="${pokemon.name}">
+                        </div>
+                    </div>
+                </li>`
+            ).join("");
+
+        pokemonList.innerHTML += newHtml;
     })
 }
 
-function convertPokemonToLi(pokemon){
-    return `<li class="list-pokemons-item">
-                <div class="topo-card">
-                    <span class="num-card">#${pokemon.order}</span>
-                    <h3 class="nome-pokemon">${pokemon.name}</h3>
-                </div>
-                <div class="detalhes">
-                    <ul class="tipos">
-                        ${convertPokemonTypesToLi(pokemon.types).join("")}
-                    </ul>
-                    <div class="img">
-                        <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
-                    </div>
-                </div>
-            </li>`
-}
+loadPokemonItens(offset, limit);
 
-const pokemonList = document.querySelector('.list-pokemons');
+loadMoreButton.addEventListener('click', () => {
+    offset += limit;
+    loadPokemonItens(offset, limit);
+})
 
-pokeApi.getPokemons().then((pokemons = []) => {
-    pokemonList.innerHTML = pokemons.map(convertPokemonToLi).join("");
+btnVoltar.addEventListener('click', () => {
+    const secaoPokedex = document.querySelector('.secao-pokedex');
+    const secaoPokemonInfo = document.querySelector('.secao-pokemon-info');
+    
+    secaoPokedex.style.display = 'block';
+    secaoPokemonInfo.style.display = 'none';
 })
