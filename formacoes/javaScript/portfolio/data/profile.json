@@ -1,0 +1,93 @@
+{
+  "name": "Keven C Elpidio",
+  "photo": "https://avatars.githubusercontent.com/u/3266640?v=4",
+  "job": "Desenvolvedor Front-end Júnior",
+  "location": "Guaiçara - SP",
+  "phone": "(14) 98158-5105",
+  "email": "kevendicamargo@gmail.com",
+  "skills": {
+    "hardSkills": [
+      {
+        "name": "SASS",
+        "logo": "fa-sass"
+      },
+      {
+        "name": "Nodejs",
+        "logo": "fa-node-js"
+      },
+      {
+        "name": "React",
+        "logo": "fa-react"
+      },
+      {
+        "name": "Git",
+        "logo": "fa-git-alt"
+      },
+      {
+        "name": "GitHub",
+        "logo": "fa-github"
+      }
+    ],
+    "softSkills": [
+      "Organização",
+      "Comunicação",
+      "Gestão de Tempo",
+      "Trabalho em Equipe",
+      "Atenção aos Detalhes"
+    ]
+  },
+  "educacao": [
+    {
+      "instituicao": "Fatec Lins",
+      "curso": "Análise e Desenvolvimento de Sistemas",
+      "status": "Cursando"
+    },
+    {
+      "instituicao": "Etec Lins",
+      "curso": "Técnico em Informática Integrado ao Ensino Médio",
+      "status": "Concluído em Dez/2020"
+    }
+  ],
+  "portfolio": [
+    {
+      "imagem": "https://kevenshtk.github.io/cronicas-de-calcularia/img/tabuleiro.png",
+      "name": "Crônicas de Calculária",
+      "urls":[
+        {
+          "repositorio": "https://github.com/Kevenshtk/cronicas-de-calcularia",
+          "deploy": "https://kevenshtk.github.io/cronicas-de-calcularia/index.html"
+        }
+      ] 
+    },
+    {
+      "imagem": "https://kevenshtk.github.io/Projetos/initialD/img/telaInitialD.png",
+      "name": "Initial D",
+      "urls":[
+        {
+          "repositorio": "https://github.com/Kevenshtk/Projetos/tree/main/initialD",
+          "deploy": "https://kevenshtk.github.io/Projetos/initialD/index.html"
+        }
+      ] 
+    },
+    {
+      "imagem": "https://kevenshtk.github.io/Projetos/mercadoLivre/src/img/telaMercado.png",
+      "name": "Mercado Livre",
+      "urls":[
+        {
+          "repositorio": "https://github.com/Kevenshtk/Projetos/tree/main/mercadoLivre",
+          "deploy": "https://kevenshtk.github.io/Projetos/mercadoLivre/index.html"
+        }
+      ] 
+    },
+    {
+      "imagem": "https://kevenshtk.github.io/Projetos/electrum/img/telaElectrum.png",
+      "name": "Electrum",
+      "urls":[
+        {
+          "repositorio": "https://github.com/Kevenshtk/Projetos/tree/main/electrum",
+          "deploy": "https://kevenshtk.github.io/Projetos/electrum/index.html"
+        }
+      ] 
+    }
+  ]
+}
