@@ -18,14 +18,14 @@
 <body>
     <main class="main">
         <header class="header">
-            <img class="photo" src="" alt="Foto de perfil">
-            <h1 class="title">Olá,<br> eu sou Keven C Elpidio</h1>
+            <img id="profile.photo" class="photo" src="" alt="Foto de perfil">
+            <h1 class="title">Olá,<br> eu sou <span id="profile.name"></span></h1>
             
             <div class="information">
-                <p><i class="fa-solid fa-user"></i> Desenvolvedor Front-end Júnior</p>
-                <p><i class="fa-solid fa-location-dot"></i> Guaiçara - SP</p>
-                <p><i class="fa-brands fa-whatsapp"></i><a href="tel:+5514981585105" target="_blank">(14) 98158-5105</a></p>
-                <p><i class="fa-solid fa-envelope"></i><a href="mailto:kevendicamargo@gmail.com" target="_blank">kevendicamargo@gmail.com</a></p>
+                <p><i class="fa-solid fa-user"></i><span id="profile.job">carregando...</span></p>
+                <p><i class="fa-solid fa-location-dot"></i><span id="profile.location">carregando...</span></p>
+                <p><i class="fa-brands fa-whatsapp"></i><a id="profile.phone" href="tel:+5514981585105" target="_blank">carregando...</a></p>
+                <p><i class="fa-solid fa-envelope"></i><a id="profile.email" href="mailto:kevendicamargo@gmail.com" target="_blank">carregando...</a></p>
             </div>
         </header>
 
@@ -35,24 +35,12 @@
             <div class="content skills">
                 <div class="hard-skills">
                     <h3>Habilidades profissionais</h3>
-                    <ul>
-                        <li><i class="fa-brands fa-sass"></i></li>
-                        <li><i class="fa-brands fa-node-js"></i></li>
-                        <li><i class="fa-brands fa-react"></i></li>
-                        <li><i class="fa-brands fa-git-alt"></i></li>
-                        <li><i class="fa-brands fa-github"></i></li>
-                    </ul>
+                    <ul id="profile.skills.hardSkills"></ul>
                 </div>
 
                 <div class="soft-skills">
                     <h3>Habilidades pessoais</h3>
-                    <ul>
-                        <li>Organização</li>
-                        <li>Comunicação</li>
-                        <li>Gestão de Tempo</li>
-                        <li>Trabalho em Equipe</li>
-                        <li>Atenção aos Detalhes</li>
-                    </ul>
+                    <ul id="profile.skills.softSkills"></ul>
                 </div>
             </div>
         </section>
@@ -60,62 +48,20 @@
         <section class="acordeon">
             <button class="trigger">Educação<i class="fa-solid fa-chevron-up"></i></button>
             <div class="content educacao">
-                <ul>
-                    <li>
-                        <p>Análise e Desenvolvimento de Sistemas - Fatec Lins</p>
-                        <small>Cursando</small>
-                    </li>
-                    <li>
-                        <p>Técnico em Informática Integrado ao Ensino Médio - Etec Lins</p>
-                        <small>Concluído em Dez/2020</small>
-                    </li>
-                </ul>
+                <ul id="profile.educacao"></ul>
             </div>
         </section>
 
         <section class="acordeon">
             <button class="trigger">Projetos <i class="fa-solid fa-chevron-up"></i></button>
             <div class="content projetos">
-                <ul>
-                    <li>
-                        <img src="https://kevenshtk.github.io/cronicas-de-calcularia/img/tabuleiro.png" alt="">
-                        <p>Crônicas de Calculária</p>
-                        <div class="links">
-                            <a href="https://github.com/Kevenshtk/cronicas-de-calcularia" target="_blank" rel="next"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://kevenshtk.github.io/cronicas-de-calcularia/index.html" target="_blank" rel="next"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="https://kevenshtk.github.io/Projetos/initialD/img/telaInitialD.png" alt="">
-                        <p>Initial D</p>
-                        <div class="links">
-                            <a href="https://github.com/Kevenshtk/Projetos/tree/main/initialD" target="_blank" rel="next"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://kevenshtk.github.io/Projetos/initialD/index.html" target="_blank" rel="next"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="https://kevenshtk.github.io/Projetos/mercadoLivre/src/img/telaMercado.png" alt="">
-                        <p>Mercado Livre</p>
-                        <div class="links">
-                            <a href="https://github.com/Kevenshtk/Projetos/tree/main/mercadoLivre" target="_blank" rel="next"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://kevenshtk.github.io/Projetos/mercadoLivre/index.html" target="_blank" rel="next"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="https://kevenshtk.github.io/Projetos/electrum/img/telaElectrum.png" alt="">
-                        <p>Electrum</p>
-                        <div class="links">
-                            <a href="https://github.com/Kevenshtk/Projetos/tree/main/electrum" target="_blank" rel="next"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://kevenshtk.github.io/Projetos/electrum/index.html" target="_blank" rel="next"><i class="fa-solid fa-globe"></i></a>
-                        </div>
-                    </li>
-                </ul>
+                <ul id="profile.projetos"></ul>
             </div>
         </section>
     </main>
 
     <script src="src/js/index.js"></script>
-    <script src="assets/js/api.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="src/js/api.js"></script>
+    <script src="src/js/main.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "Keven C Elpidio",
-  "photo": "https://avatars.githubusercontent.com/u/3266640?v=4",
+  "photo": "",
   "job": "Desenvolvedor Front-end Júnior",
   "location": "Guaiçara - SP",
   "phone": "(14) 98158-5105",
@@ -48,7 +48,7 @@
       "status": "Concluído em Dez/2020"
     }
   ],
-  "portfolio": [
+  "projetos": [
     {
       "imagem": "https://kevenshtk.github.io/cronicas-de-calcularia/img/tabuleiro.png",
       "name": "Crônicas de Calculária",
