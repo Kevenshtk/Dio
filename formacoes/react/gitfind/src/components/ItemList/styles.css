@@ -1,0 +1,16 @@
+.item {
+    margin: 24px 0;
+}
+
+.item strong {
+    color: #539BF5;
+    font-size: 24px;
+    text-align: right;
+    margin: 24px 0;
+}
+
+.item p {
+    color: #999999;
+    font-size: 12px;
+    margin: 24px 0;
+}
