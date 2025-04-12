@@ -7,7 +7,7 @@
 Crie 10 headlines para nomes de artigos sobre o assunto Aprender matemática com jogos de rpg
 
 ### Criação da capa
-**ChatGP:T**
+**ChatGPT:**
 Crie um prompt para o Gencraft gerar uma imagem de capa de acordo com o título "Do Tabuleiro à Sala de Aula: Aprendendo Matemática com Jogos de RPG"
 
 **Gencraft:**
