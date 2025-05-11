@@ -2,28 +2,33 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { api } from "../../services/api";
 
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 
-import { MdEmail, MdLock } from "react-icons/md";
-
 import {
   Container,
   Title,
   Column,
-  CriarText,
-  EsqueciText,
-  Row,
   SubTitleLogin,
   TitleLogin,
+  TextContent,
+  TextContentLogin,
   Wrapper,
 } from "./styles";
 
+import { api } from "../../services/api";
+
+import { MdEmail, MdLock } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
+
 const schema = yup
   .object({
+    nome: yup
+      .string()
+      .min(10, "Insira o nome completo")
+      .required("Campo obrigatório"),
     email: yup
       .string()
       .email("email não é válido")
@@ -35,7 +40,7 @@ const schema = yup
   })
   .required();
 
-const Login = () => {
+const Cadastro = () => {
   const navigate = useNavigate();
 
   const {
@@ -49,22 +54,29 @@ const Login = () => {
 
   const onSubmit = async (formData) => {
     try {
-      const { data } = await api.get(
-        `users?email=${formData.email}&senha=${formData.senha}`
+      const { data } = await api.post(
+        "users",
+        {
+            "nome": formData.nome,
+            "email": formData.email,
+            "senha": formData.senha
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          }
+        }
       );
+      alert("Cadastro realizado com sucesso!");
+      handleClickSignIn();
 
-      if (data.length === 1) {
-        handleClickSignIn();
-      } else {
-        alert("Email ou senha inválidos!");
-      }
     } catch (error) {
       alert("Houve um erro, tente novamente.");
     }
   };
 
   const handleClickSignIn = () => {
-    navigate("/feed");
+    navigate("/login");
   };
 
   return (
@@ -79,9 +91,17 @@ const Login = () => {
         </Column>
         <Column>
           <Wrapper>
-            <TitleLogin>Faça seu cadastro</TitleLogin>
-            <SubTitleLogin>Faça seu login e make the change.</SubTitleLogin>
+            <TitleLogin>Comece agora grátis</TitleLogin>
+            <SubTitleLogin>Crie sua conta e make the change._</SubTitleLogin>
             <form onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                name="nome"
+                errorMessage={errors.nome && errors.nome.message}
+                control={control}
+                type="text"
+                placeholder="Nome completo"
+                leftIcon={<FaUser />}
+              />
               <Input
                 name="email"
                 errorMessage={errors.email && errors.email.message}
@@ -98,12 +118,17 @@ const Login = () => {
                 placeholder="senha"
                 leftIcon={<MdLock />}
               />
-              <Button type="submit" title="Entrar" variant="secondary" />
+              <Button
+                type="submit"
+                title="Criar minha conta"
+                variant="secondary"
+              />
             </form>
-            <Row>
-              <EsqueciText>Esqueci minha senha</EsqueciText>
-              <CriarText>Criar Conta</CriarText>
-            </Row>
+            <TextContent>
+              Ao clicar em "criar minha conta grátis", declaro que aceito as
+              Políticas de Privacidade e os Termos de Uso da DIO.
+            </TextContent>
+            <TextContentLogin>Já tenho conta. <span onClick={() => navigate("/login")}>Fazer login</span></TextContentLogin>
           </Wrapper>
         </Column>
       </Container>
@@ -111,4 +136,4 @@ const Login = () => {
   );
 };
 
-export { Login };
+export { Cadastro };

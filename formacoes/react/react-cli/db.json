@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John",
+      "email": "jhon@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Keven",
+      "email": "Keven@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": "a295",
+      "nome": "jubileu",
+      "email": "jubileu@gmail.com",
+      "senha": "123"
+    },
+    {
+      "id": "8b06",
+      "nome": "irineu",
+      "email": "irineu@gmail.com",
+      "senha": "123"
+    },
+    {
+      "id": "6802",
+      "nome": "111111",
+      "email": "00000@sdada",
+      "senha": "25252"
+    }
+  ]
+}
