@@ -12,9 +12,11 @@ import {
 } from "./styles";
 
 import { Button } from "../Button";
+import type { IHeader } from "./types";
+
 import logo from "../../assets/logo-dio.png";
 
-const Header = ({ autenticacao }) => {
+const Header = ({ autenticacao }: IHeader) => {
   const navigate = useNavigate();
 
   const handleClickLogin = () => {
