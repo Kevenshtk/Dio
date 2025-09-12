@@ -12,11 +12,15 @@ import {
 } from "./styles";
 
 import { Button } from "../Button";
-import type { IHeader } from "./types";
 
 import logo from "../../assets/logo-dio.png";
+import { useContext } from "react";
+import { AuthContentext } from "../../context/auth";
 
-const Header = ({ autenticacao }: IHeader) => {
+const Header = () => {
+
+  const { user } = useContext(AuthContentext);
+
   const navigate = useNavigate();
 
   const handleClickLogin = () => {
@@ -32,7 +36,7 @@ const Header = ({ autenticacao }: IHeader) => {
       <Container>
         <Row>
           <img src={logo} alt="logo" />
-          {autenticacao && (
+          {user.name && (
             <>
               <BuscarInputContainer>
                 <Input placeholder="Buscar" />
@@ -43,7 +47,7 @@ const Header = ({ autenticacao }: IHeader) => {
           )}
         </Row>
         <Row>
-          {autenticacao ? (
+          {user.name ? (
             <UserPicture src="https://avatars.githubusercontent.com/u/102769882?v=4"/>
           ) : (
             <>
