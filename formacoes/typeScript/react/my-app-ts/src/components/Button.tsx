@@ -1,7 +1,8 @@
 import * as Chakra from "@chakra-ui/react";
+import { MouseEventHandler } from "react";
 
 interface IButton {
-    onClick: () => void,
+    onClick: MouseEventHandler,
     text: string,
 }
 
