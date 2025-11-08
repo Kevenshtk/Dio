@@ -1,9 +1,9 @@
-import { Login } from "./Login";
+import { Container } from "@chakra-ui/react";
 
-export const Card = () => {
+export const Card = ({ children }: any) => {
   return (
-    <>
-      <Login />
-    </>
+    <Container borderRadius="25px" backgroundColor="white" p="25px">
+      {children}
+    </Container>
   );
 };
