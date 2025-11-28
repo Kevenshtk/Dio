@@ -3,6 +3,7 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "./AppContext";
 import { useNavigate } from "react-router-dom";
+import { changeLocalStorage } from "../service/storage";
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -16,6 +17,7 @@ export const Header = () => {
 
 
   const logout = () => {
+    changeLocalStorage({ login: false });
     setIsLoggedIn(false);
     navigate("/");
   }

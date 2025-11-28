@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { login } from "../service/login";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../components/AppContext";
+import { changeLocalStorage } from "../service/storage";
 
 const Home = () => {
   const [email, setEmail] = useState<string>("");
@@ -15,13 +16,14 @@ const Home = () => {
   const validateUser = async (email: string, password: string) => {
     const loggedIn = await login(email, password);
 
-    if(!loggedIn){
+    if (!loggedIn) {
       return alert("Email ou senha incorreta");
     }
 
     setIsLoggedIn(true);
+    changeLocalStorage({ login: true });
     navigate("/conta/1");
-  }
+  };
 
   return (
     <ChakraProvider>
@@ -46,7 +48,10 @@ const Home = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Senha"
             />
-            <Button onClick={() => validateUser(email, password)} text="Entrar" />
+            <Button
+              onClick={() => validateUser(email, password)}
+              text="Entrar"
+            />
           </Flex>
         </form>
       </Card>
